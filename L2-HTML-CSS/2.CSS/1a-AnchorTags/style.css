@@ -1,0 +1,20 @@
+/* PSUEDO-SELECTORS */
+/* lvha */
+a:link{
+    color: black;
+    text-decoration: none;
+}
+
+a:visited{
+    color: black;
+}
+
+a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+
+a:active{
+    background-color: black;
+    color: yellow;
+}
