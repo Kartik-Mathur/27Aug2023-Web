@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- CSS: CASCADING STYLE SHEETS -TO BEAUTIFY OUR  CODE -->
+<!-- CSS LAGANE KE 3 WAYS HOTE HAI -->
+<!-- 1. Internal CSS: Head ke tag ke andar likhte hai, using <style> -->
+<!-- 2. Inline CSS -->
+<!-- 3. External CSS -->
+
+<head>
+    <title>Document</title>
+
+    <style>
+        div{
+            color: white;
+            background-color: rebeccapurple;
+        }
+
+        .mydiv{
+            font-size: 34px;
+        }
+        /* Specificity of elements:  */
+        /* elementName < className < id < inline */
+        #div1{
+            color: teal;
+            font-size: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="div" class="mydiv">This is my DIV</div>
+    <div id="div1" class="mydiv" style="font-size: 50px;">This is my DIV-1</div>
+    <div id="div2" class="mydiv">This is my DIV-2</div>
+    
+    <span id="span" class="myspan mydiv">This is a span</span>
+
+
+
+</body>
+
+</html>
