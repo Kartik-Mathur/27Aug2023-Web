@@ -1,0 +1,40 @@
+.img{
+    border: 1px solid black;
+    width: 30%;
+}
+
+.description{
+    /* border: 1px solid red; */
+    width: 63%;
+}
+/* 
+.parent{
+    border: 1px solid green;
+    background-color: hotpink;
+} */
+
+.parent{
+    height: 200px;
+}
+
+/* FLOAT PROPERTY */
+.img{
+    float:left;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKXYSs2F_0O04sLv8AjIH43Owr2rEIfkFEOA&usqp=CAU");
+    height: 100%;
+}
+
+.description{
+    float: right;
+}
+
+.clearfix{
+    clear: both;
+}
+
+/* CLEAR FIX WAY-2 */
+.parent::after{
+    content: "";
+    display: table;
+    clear: both;
+}
