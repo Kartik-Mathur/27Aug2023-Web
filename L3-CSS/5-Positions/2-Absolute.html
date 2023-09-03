@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <!-- Absolute position: Works wrt parent -->
+    <!-- Jo bhi nearest ancestor ko position milli hogi -->
+    <!-- Uske respect mei work krega -->
+    <style>
+        .para{
+            border: 1px solid green;
+        }
+        .itemContainer{
+            border: 1px solid black;
+            height: 50px;
+        }
+        .container{
+            border: 1px solid red;
+        }
+
+
+        /* POSITION ABSOLUTE */
+        .item{
+            background-color: sandybrown;
+            color: white;
+            border: 1px solid black;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .itemContainer{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur vel veniam nostrum ab quam suscipit, iste accusantium atque velit sit debitis tenetur quis, cupiditate, cumque libero ipsam distinctio ipsum nihil tempore numquam dolore neque. Odit similique obcaecati nulla non? Voluptas a ducimus impedit rerum sequi quasi excepturi autem velit illo.
+        </p>
+        <div class="itemContainer">
+            <span class="item">Hello</span>
+        </div>
+        <p class="para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur vel veniam nostrum ab quam suscipit, iste accusantium atque velit sit debitis tenetur quis, cupiditate, cumque libero ipsam distinctio ipsum nihil tempore numquam dolore neque. Odit similique obcaecati nulla non? Voluptas a ducimus impedit rerum sequi quasi excepturi autem velit illo.
+        </p>
+    </div>
+</body>
+</html>

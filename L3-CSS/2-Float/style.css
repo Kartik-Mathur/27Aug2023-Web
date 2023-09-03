@@ -1,5 +1,5 @@
 .img{
-    border: 1px solid black;
+    /* border: 1px solid orange; */
     width: 30%;
 }
 
@@ -38,6 +38,10 @@
 /* CLEAR FIX WAY-2 */
 .parent::after{
     content: "";
-    display: table;
+    display: block;
     clear: both;
+}
+
+.parent{
+    border: 1px solid black;
 }
