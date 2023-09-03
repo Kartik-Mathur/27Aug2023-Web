@@ -20,7 +20,10 @@
 /* FLOAT PROPERTY */
 .img{
     float:left;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKXYSs2F_0O04sLv8AjIH43Owr2rEIfkFEOA&usqp=CAU");
+    background-image: url("https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 45% 0%;
     height: 100%;
 }
 
