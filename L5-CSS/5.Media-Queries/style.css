@@ -1,0 +1,37 @@
+.item-1{
+    background-color: burlywood;
+}
+.item-2{
+    background-color: greenyellow;
+}
+.item-3{
+    background-color: aqua;
+}
+.item-4{
+    background-color: blueviolet;
+}
+.item-5{
+    background-color: orange;
+}
+
+@media screen and (max-width:1400px) and (min-width: 900px){
+    .item{
+        width: 200px;
+        height: 300px;
+        border: 1px solid black;
+        display: inline-block;
+        margin: 10px 20px;
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width:899px){
+    .item{
+        width: 90%;
+        height: 300px;
+        border: 1px solid black;
+        display: block;
+        margin: 10px 20px;
+        font-size: 40px;
+    }   
+}
