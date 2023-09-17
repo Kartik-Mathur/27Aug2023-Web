@@ -1,0 +1,18 @@
+.box{
+    width: 300px;
+    height: 300px;
+    background-color: orange;
+    margin: 50px auto;
+    /* transform: rotateZ(75deg); */
+    /* transform: skewX(20deg); */
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(1,-0.1, 0, 1.45);
+}
+
+.box:hover{
+    transform: rotateZ(2turn);
+    background-color: blue;
+    border-radius: 50%;
+    color: white;
+    overflow: hidden;
+}

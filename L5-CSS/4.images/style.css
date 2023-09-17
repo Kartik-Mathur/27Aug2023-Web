@@ -1,0 +1,7 @@
+.container{
+    height: 500px;
+    width: 100%;
+    background-image: url('../3.Janmasthmi/img/handi.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
