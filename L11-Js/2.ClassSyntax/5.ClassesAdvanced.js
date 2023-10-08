@@ -21,8 +21,9 @@ class Child extends Person {
 }
 
 
-let aryan = new Person("Aryan", 19, "Delhi", -10);
-console.log(aryan);
+
+// let aryan = new Person("Aryan", 19, "Delhi", -10);
+// console.log(aryan);
 
 let Aditya = new Child("Aditya",23,"Gorakhpur",10000);
 console.log(Aditya);
