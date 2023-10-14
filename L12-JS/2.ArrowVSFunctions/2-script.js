@@ -8,7 +8,6 @@ function hello(){
         a: "Hello",
         b: "World"
     }
-    
     sum.call(obj1,10,20);
 }
 let obj = {

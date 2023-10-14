@@ -21,6 +21,8 @@ hello.call(obj1);// this--> obj1
 world.call(obj);
 world.call(obj1);
 
+console.log(hello.prototype);
+console.log(world.prototype);
 // hello();
 // world();
 
