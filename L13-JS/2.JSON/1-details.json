@@ -1,0 +1,17 @@
+[
+    {
+        "name":"Aditya",
+        "age":22,
+        "course":"WebDev"
+    },
+    {
+        "name":"Manan",
+        "age":20,
+        "course":"C++"
+    },
+    {
+        "name":"Deepanshu",
+        "age":12,
+        "course":"HTML"
+    }
+]
