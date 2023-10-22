@@ -22,7 +22,7 @@ btn.addEventListener('mouseenter',()=>{
 })
 
 document.addEventListener('scroll',(ev)=>{
-    // console.log(ev);
+    console.log('Scrolled');
     if(window.scrollY>765){
         nav.classList.add('orange');
         nav.classList.remove('white');
