@@ -1,6 +1,5 @@
 let btn = document.querySelector('#btn');
 
-
 function debounce(fun, delay) {
     let id;
     return (ev) => {
