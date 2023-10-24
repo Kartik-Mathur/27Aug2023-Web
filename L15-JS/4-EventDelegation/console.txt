@@ -1,0 +1,8 @@
+- let div = document.createElement('div');
+- undefined
+- div.innerText = '6'
+- '6'
+- div.classList.add('item')
+- undefined
+- container.appendChild(div)
+- <div class=​"item">​6​</div>​

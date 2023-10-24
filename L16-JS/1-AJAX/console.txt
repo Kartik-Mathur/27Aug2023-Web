@@ -1,0 +1,12 @@
+let obj = {a:1,b:true}
+undefined
+obj
+{a: 1, b: true}
+JSON.stringify(obj)
+'{"a":1,"b":true}'
+let jsonData = JSON.stringify(obj)
+undefined
+jsonData
+'{"a":1,"b":true}'
+JSON.parse(jsonData)
+{a: 1, b: true}
