@@ -30,13 +30,15 @@
     padding: 5px;
 }
 
-.factItemParent:first-child .btnGrp .upBtn{
-    display: none;
-}
-
+.factItemParent:first-child .btnGrp .upBtn,
 .factItemParent:last-child .btnGrp .downBtn{
     display: none;
+    /* visibility: hidden; */
 }
+/* 
+.factItemParent:last-child .btnGrp .downBtn{
+    display: none;
+} */
 
 .btnGrp{
     float: right;
@@ -53,4 +55,6 @@
     width: 90%;
     margin: auto;
 }
+
+
 
