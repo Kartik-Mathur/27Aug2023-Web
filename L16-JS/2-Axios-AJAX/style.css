@@ -1,0 +1,56 @@
+.btn,
+.deleteBtn,
+.upBtn,
+.downBtn{
+    border: 1px solid black;
+    /* border-radius: 5%; */
+    background-color: blueviolet;
+    color: white;
+    font-weight: 800;
+}
+
+.factsBtn{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.factsList{
+    margin-top: 20px;
+}
+
+.factItem{
+    list-style: none;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 2px 3px 10px black;
+    margin-bottom: 10px;
+    width: 70%;
+    float: left;
+    padding: 5px;
+}
+
+.factItemParent:first-child .btnGrp .upBtn{
+    display: none;
+}
+
+.factItemParent:last-child .btnGrp .downBtn{
+    display: none;
+}
+
+.btnGrp{
+    float: right;
+}
+
+.factItemParent::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.factItemParent{
+    /* border: 1px solid red; */
+    width: 90%;
+    margin: auto;
+}
+
