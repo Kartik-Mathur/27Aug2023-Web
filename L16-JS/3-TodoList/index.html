@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,28 +9,42 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- <script src="axios.js"></script> -->
-    
+
 </head>
+
 <body>
-    <input type="text" class="inp">
-    <button class="btn factsBtn">Get Facts</button>
-    
-    <div class="factsList">
-       <div class="task">
-        <input type="checkbox" name="" id="">
-            <span class="text">Play Cricket</span>
-        </div>
-
-
-        
+    <div class="taskInp">
+        <input type="text" class="inp" placeholder="Enter New Task">
+        <button class="btn factsBtn">Get Facts</button>
     </div>
 
+    <div class="factsList">
+        <!-- <div class="factItemParent">
+            <div class="task factItem">
+                <input type="checkbox" name=""  class="checkBox">
+                <span class="text">Play Hockey</span>
+            </div>
+            <div class="btnGrp">
+                <button class="deleteBtn">X</button>
+                <button class="downBtn">↓</button>
+                <button class="upBtn">↑</button>
+            </div>
+        </div> -->
+    </div>
+
+
     
+
+    <script src="./factsHandling.js"></script>
+    <script src="./addingTodos.js"></script>
+
     <script>
         let task = document.querySelector('.task');
-        task.addEventListener('dblclick',(ev)=>{
-            ev.target.setAttribute('contenteditable',true);
+        console.log(task)
+        task.addEventListener('dblclick', (ev) => {
+            ev.target.setAttribute('contenteditable', true);
         })
     </script>
 </body>
+
 </html>
