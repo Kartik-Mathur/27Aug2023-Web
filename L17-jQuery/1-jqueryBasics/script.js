@@ -45,3 +45,9 @@ li
 // parent of new element we are going to add
 let movies = $('.movies');
 movies.append(li);
+
+// NextElementSibling
+console.log(about.next())
+movies.insertBefore(about)
+console.log(about.prev())
+console.log(about.parent())

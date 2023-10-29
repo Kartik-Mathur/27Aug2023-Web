@@ -1,0 +1,79 @@
+.btn,
+.deleteBtn,
+.upBtn,
+.downBtn{
+    border: 1px solid black;
+    /* border-radius: 5%; */
+    background-color: blueviolet;
+    color: white;
+    font-weight: 800;
+}
+
+.linethrough{
+    text-decoration: line-through;
+}
+
+.taskInp{
+    width: 70%;
+    margin: auto;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+}
+
+.inp{
+    width: 50%;
+}
+
+.factsBtn{
+    width: 20%;
+    /* margin: auto; */
+    text-align: center;
+    cursor: pointer;
+}
+
+.factsList{
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    /* border: 1px solid black; */
+}
+
+.factItem{
+    list-style: none;
+    border-bottom: 1px solid #ccc;
+    /* box-shadow: 2px 3px 10px black; */
+    margin-bottom: 10px;
+    width: 70%;
+    float: left;
+    padding: 5px;
+}
+
+.factItemParent:first-child .btnGrp .upBtn,
+.factItemParent:last-child .btnGrp .downBtn{
+    display: none;
+    /* visibility: hidden; */
+}
+/* 
+.factItemParent:last-child .btnGrp .downBtn{
+    display: none;
+} */
+
+.btnGrp{
+    float: right;
+}
+
+.factItemParent::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.factItemParent{
+    /* border: 1px solid red; */
+    width: 90%;
+    margin: auto;
+}
+
+
+
