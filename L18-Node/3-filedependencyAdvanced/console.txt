@@ -1,0 +1,19 @@
+let p = {
+    name: 'Aditya',
+    age: 20
+}
+undefined
+let x = p;
+undefined
+x.age = 40;
+40
+p
+{name: 'Aditya', age: 40}
+let y = { ...p}
+undefined
+y 
+{name: 'Aditya', age: 40}
+y.age = 100;
+100
+p
+{name: 'Aditya', age: 40}
