@@ -19,6 +19,8 @@ const middleWareFuncs = require('./utils/middleware');
 app.use(middleWareFuncs.func1);
 app.use(middleWareFuncs.func2);
 app.use('/hi',middleWareFuncs.func3);
+// /hi, /hi/greetings, /hi/....../something
+// Nahi chlega for /hi1, /higreetings
 
 app.get('/',(req,res)=>{
     res.send('Hello');
