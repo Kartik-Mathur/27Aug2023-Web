@@ -24,6 +24,9 @@ function initialiseList(){
         data = data.data;
         updateList(data);
     })
+    .catch(err=>{
+        alert(err);
+    })
 }
 
 initialiseList();
@@ -33,6 +36,9 @@ btn.addEventListener('click',(ev)=>{
         .then((data)=>{
             data = data.data;
             updateList(data);
+        })
+        .catch(err=>{
+            alert(err);
         })
 })
 
@@ -45,6 +51,9 @@ taskList.addEventListener('click',(ev)=>{
                 data = data.data;
                 updateList(data);
             })
+            .catch(err=>{
+                alert(err);
+            })
     }
     else if(ev.target.classList.contains('upBtn')){
         let taskName = ev.target.parentElement.children[0].innerText;
@@ -54,6 +63,9 @@ taskList.addEventListener('click',(ev)=>{
                 data = data.data;
                 updateList(data);
             })
+            .catch(err=>{
+                alert(err);
+            })
     }
     else if(ev.target.classList.contains('downBtn')){
         let taskName = ev.target.parentElement.children[0].innerText;
@@ -62,6 +74,9 @@ taskList.addEventListener('click',(ev)=>{
             .then((data)=>{
                 data = data.data;
                 updateList(data);
+            })
+            .catch(err=>{
+                alert(err);
             })
     }
 
