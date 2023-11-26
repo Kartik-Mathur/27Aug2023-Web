@@ -45,6 +45,16 @@ app.get('/decreasepriority',(req,res)=>{
     res.send(arr);
 })
 
+app.get('/deletetask',(req,res)=>{
+    const {task} = req.query;
+    let newArr = arr.filter((e,indx,arr)=>{
+        if(e === task) return false;
+        return true;
+    })
+    arr = newArr;
+    res.send(arr)
+})
+
 app.listen(PORT,()=>{
     console.log(`http://localhost:`+PORT);
 });

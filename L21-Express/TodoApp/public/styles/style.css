@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#btn{
+    color: white;
+    background-color: orange;
+    border: 0px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.taskListItem{
+    border-bottom: 1px solid black;
+    list-style: none;
+    padding: 4px;
+    margin: 10px;
+}
+
+.taskListItem:first-child .upBtn,
+.taskListItem:last-child .downBtn{
+    display: none;
+}
+
+.btn{
+    padding: 4px;
+    margin: 2px;
+}
+
+#task{
+    font-size: 20px;
+}
