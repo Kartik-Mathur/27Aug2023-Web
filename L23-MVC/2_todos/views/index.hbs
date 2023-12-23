@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js"></script>
+</head>
+<body>
+    <h1 class="heading">Todo App</h1>
+
+    <form class="form" action="/addtask" method="POST">
+        <input name="task" class="taskname" placeholder="Enter task">
+        <button class="btn" type="submit">Add</button>
+    </form>
+
+    <ul class="list">
+        {{#each todos as |t|}}
+            <li class="listItem">
+                <div class="listItemText">{{t}}</div>
+                <div class="btnGroup">
+                    <button class="upBtn">
+                        <a href="/increasePriority?name={{t}}">↑</a>
+                    </button>
+                    <button class="downBtn">
+                        <a href="/decreasePriority?name={{t}}">↓</a>
+                        </button>
+                    <button class="delBtn">
+                        <a href="/deletetask?name={{t}}">❌</a>
+                    </button>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</body>
+</html>
