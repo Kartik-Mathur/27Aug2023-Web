@@ -1,4 +1,5 @@
 const Tasks = require('../models/taskModel');
+
 module.exports.getTasks = async (req,res)=>{
     try{
         let todos = await Tasks.getTasks();
@@ -13,6 +14,7 @@ module.exports.getTasks = async (req,res)=>{
 
 module.exports.postAddTask = async (req,res)=>{
     const {task,reqType} = req.body;
+
     try{
         let data = await Tasks.addTask(task);
         console.log(reqType);
@@ -37,9 +39,10 @@ module.exports.postAddTask = async (req,res)=>{
 // }
 
 module.exports.getIncreasePriority = async (req,res)=>{
-    const {name} = req.query;
+    const {name, reqType} = req.query;  
     try{
         let data = await Tasks.increasePriority(name);
+        if(reqType === 'xhr') return res.send(data);
         res.redirect('/');
     }
     catch(err){
@@ -56,9 +59,10 @@ module.exports.getIncreasePriority = async (req,res)=>{
 //     res.redirect('/');
 // }
 module.exports.getDecreasePriority = async (req,res)=>{
-    const {name} = req.query;
+    const {name, reqType} = req.query;  
     try{
         let data = await Tasks.decreasePriority(name);
+        if(reqType === 'xhr') return res.send(data);
         res.redirect('/');
     }
     catch(err){
@@ -76,9 +80,10 @@ module.exports.getDecreasePriority = async (req,res)=>{
 // }
 
 module.exports.getDeleteTask = async(req,res)=>{
-    const {name} = req.query;  
+    const {name, reqType} = req.query;  
     try{
         let data = await Tasks.DeleteTask(name);
+        if(reqType === 'xhr') return res.send(data);
         res.redirect('/');
     }
     catch(err){
