@@ -1,0 +1,44 @@
+.navbar{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(230, 188, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid black;
+    z-index: 1;
+}
+
+.nav-img{
+    height: 80px;
+    width: 180px;
+    /* border: 1px solid green; */
+    background-image: url('https://miro.medium.com/v2/resize:fit:8978/1*s986xIGqhfsN8U--09_AdA.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 18px;
+}
+
+.nav-links{
+    width: 600px;
+    /* border: 1px solid black; */
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+.nav-link-btn{
+    font-family: sans-serif;
+    font-size: 18px;
+    padding: 10px;
+    border: 0px;
+    border-radius: 25%;
+    background-color: black;
+    color: white;
+}
