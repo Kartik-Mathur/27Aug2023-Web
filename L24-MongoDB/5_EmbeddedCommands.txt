@@ -1,0 +1,44 @@
+- Create two collections
+- Products and Users
+Products:
+    - Keys: name, price, description
+
+Users:
+    - name, orders:[]
+
+Ofcourse, user jab product purchase hoga orders history mei
+Purana price jispr khareeda whi aana chahiye,
+That's why we will store details like:
+    Users: 
+    {
+        name: 'Aryan',
+        orders: [
+            {
+                name:'Laptop',
+                price: 500,
+                description: 'Badhiyaa Laptop'
+            }
+        ]
+    }
+
+Aise store kia kynki kal ko price change ho gaya toh?
+khareeda jispr tha ussi price ko aana chahiye orders[] ke andar
+otherwise, sasta khareed kar mehnga return kr dega
+
+Products : [
+    {
+        name: 'Laptop',
+        price: 500,
+        description : 'Badhiya Laptop'
+    },
+    {
+        name: 'Mobile',
+        price: 5100,
+        description : 'Mast Mobile'
+    },
+    {
+        name: 'Shoe',
+        price: 1500,
+        description : 'Sexy Shoe'
+    }
+]

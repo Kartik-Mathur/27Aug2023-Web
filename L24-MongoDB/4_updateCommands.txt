@@ -1,0 +1,9 @@
+- Update the Mentor name from Monu to Monu Kumar
+ - db.Teachers.updateOne(
+        {name: 'Monu'},
+        {
+            $set:{
+                name: 'Monu Kumar'
+            }
+        }
+    )

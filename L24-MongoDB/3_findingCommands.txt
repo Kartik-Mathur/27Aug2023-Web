@@ -33,3 +33,21 @@ To find documents:
         name: 'Abhishek',
         subject: 'C++'
     }
+
+- Find all Teachers those who teach C++ OR Java
+    - db.Teachers.find({
+        subject: {
+            $in: [
+                'C++',
+                'Java'
+            ]
+        }
+    });
+
+- Find all Teachers those who teach C++ and name is Abhishek
+    - db.Teachers.find({
+        $and: [
+            {name: 'Abhishek'},
+            {subject: 'C++'}
+        ]
+    })

@@ -1,0 +1,103 @@
+1. Create products and users collection, same mydb ke andar
+    - db.createCollection('products');
+    - db.createCollection('users');
+
+2. Insert data into both collections
+    db.products.insertMany([
+        {
+            name: 'Laptop',
+            price: 500,
+            description : 'Badhiya Laptop'
+        },
+        {
+            name: 'Mobile',
+            price: 5100,
+            description : 'Mast Mobile'
+        },
+        {
+            name: 'Shoe',
+            price: 1500,
+            description : 'Sexy Shoe'
+        }
+    ])
+
+    db.users.insertMany([
+        {
+            name: 'Aryan',
+            orders: []
+        },
+        {
+            name: 'Joyeta',
+            orders: []
+        }
+    ])
+
+3. Inserting product details to orders[] of any user.
+    - db.users.updateOne(
+        { name: 'Aryan'},
+        {
+            $set:{
+                orders: [
+                    {
+                        name: 'Mobile',
+                        price: 5100,
+                        description : 'Mast Mobile'
+                    },
+                    {
+                        name: 'Shoe',
+                        price: 1500,
+                        description : 'Sexy Shoe'
+                    }
+                ]
+            }
+        }
+    )
+
+4. Lets see the result?
+    - db.users.find({name:'Aryan'})
+    RESULT:  
+[
+  {
+    _id: ObjectId("6589207db01111787889256d"),
+    name: 'Aryan',
+    orders: [
+      { name: 'Mobile', price: 5100, description: 'Mast Mobile' },
+      { name: 'Shoe', price: 1500, description: 'Sexy Shoe' }
+    ]
+  }
+]
+
+5. Lets update it for the second user:
+    - db.users.updateOne(
+        { name: 'Joyeta'},
+        {
+            $set:{
+                orders: [
+                    {
+                        name: 'Laptop',
+                        price: 500,
+                        description : 'Badhiya Laptop'
+                    },
+                    {
+                        name: 'Shoe',
+                        price: 1500,
+                        description : 'Sexy Shoe'
+                    }
+                ]
+            }
+        }
+    )
+
+6. Result: 
+- db.users.find({name:'Joyeta'})
+RESULT: 
+[
+  {
+    _id: ObjectId("6589207db01111787889256e"),
+    name: 'Joyeta',
+    orders: [
+      { name: 'Laptop', price: 500, description: 'Badhiya Laptop' },
+      { name: 'Shoe', price: 1500, description: 'Sexy Shoe' }
+    ]
+  }
+]

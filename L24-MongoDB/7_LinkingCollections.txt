@@ -1,0 +1,97 @@
+1. Clear the orders[] of all the users, kyunki linking seekhna h
+    - db.users.updateMany(
+        {},
+        {
+            $set: {
+                orders: []
+            }
+        }
+    )
+
+2. RESULT
+QUERY: db.users.find()
+RESULT: 
+[
+  {
+    _id: ObjectId("6589207db01111787889256d"),
+    name: 'Aryan',
+    orders: []
+  },
+  {
+    _id: ObjectId("6589207db01111787889256e"),
+    name: 'Joyeta',
+    orders: []
+  }
+]
+
+3. Linking krne ke liye orders mei is baari
+products ki ids ko store kr lenge, ofcourse abhi manually kr lete hai
+PRODUCT DETAILS: 
+[
+  {
+    _id: ObjectId("6589205ab01111787889256a"),
+    name: 'Laptop',
+    price: 500,
+    description: 'Badhiya Laptop'
+  },
+  {
+    _id: ObjectId("6589205ab01111787889256b"),
+    name: 'Mobile',
+    price: 5100,
+    description: 'Mast Mobile'
+  },
+  {
+    _id: ObjectId("6589205ab01111787889256c"),
+    name: 'Shoe',
+    price: 1500,
+    description: 'Sexy Shoe'
+  }
+]
+
+USERS ke pass IDS store krenge
+LETs update Joyeta user orders[]
+- QUERY: db.users.updateOne(
+    {name: 'Joyeta'},
+    {
+        $set:{
+            orders: [
+                ObjectId("6589205ab01111787889256a"),
+                ObjectId("6589205ab01111787889256c")
+            ]
+        }
+    }
+)
+
+RESULT: db.users.find({name:'Joyeta'})
+[  
+    {
+        _id: ObjectId("6589207db01111787889256e"),
+        name: 'Joyeta',
+        orders: [
+        ObjectId("6589205ab01111787889256a"),
+        ObjectId("6589205ab01111787889256c")
+        ]
+    }
+]
+
+4. Retreiving the results
+- db.users.aggregate({
+    $lookup:{
+        from: 'products',
+        localField: 'orders',
+        foreignField: '_id',
+        as: 'Data'
+    }
+})
+
+Yeh sabhi users ke liye chal jaega..
+JUST TO GET DETAILS OF Joyeta
+
+db.users.aggregate({
+    $lookup:{
+        from: 'products',
+        localField: 'orders',
+        foreignField: '_id',
+        as: 'Data'
+    }
+})
