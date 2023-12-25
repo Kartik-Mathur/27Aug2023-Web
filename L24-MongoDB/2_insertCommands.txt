@@ -1,0 +1,14 @@
+1. We need the collection to insert data/document
+    - db.Teachers.insertOne(object);
+    - Example: 
+    db.Teachers.insertOne({
+        name: 'Abhishek',
+        subject: 'C++'
+    })
+
+2. To insert multiple documents: 
+    db.Teachers.insertMany([
+        { name: 'Monu', subject: 'Java' }, 
+        { name: 'Samarth', subject: 'Web' }, 
+        { name: 'Abhijeet', subject: 'Data Science' }
+    ])

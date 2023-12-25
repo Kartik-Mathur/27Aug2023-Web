@@ -1,0 +1,35 @@
+To find documents: 
+    db.Teachers.find({}); 
+        - Will return all the documents from the collection Teachers
+        - Will return only the top20 documents
+
+        [
+            {
+                _id: ObjectId("65890a9ab011117878892566"),
+                name: 'Abhishek',
+                subject: 'C++'
+            },
+            .
+            .
+            {
+                _id: ObjectId("65890b9ab011117878892569"),
+                name: 'Abhijeet',
+                subject: 'Data Science'
+            }
+        ]
+
+    - To find something specific: provide the details in the find() function
+    - db.Teachers.find({subject:'C++'});
+    [
+        {
+            _id: ObjectId("65890a9ab011117878892566"),
+            name: 'Abhishek',
+            subject: 'C++'
+        }
+    ]
+    - db.Teachers.findOne({subject:'C++'});
+    {
+        _id: ObjectId("65890a9ab011117878892566"),
+        name: 'Abhishek',
+        subject: 'C++'
+    }

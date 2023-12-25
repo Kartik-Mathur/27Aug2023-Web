@@ -1,0 +1,9 @@
+mongod --dbpath=data
+in terminal write: mongosh
+
+
+Inside mongosh
+1. Create DB: use myDB;
+2. Show DBs: show dbs;
+3. Create collection for DB: db.createCollection('Teachers')
+4. INSERT IN COLLECTIONS: 2_insertCommands.txt
