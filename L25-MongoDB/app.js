@@ -6,12 +6,12 @@ const PORT = 4444;
 
 app.set('view engine', 'hbs');
 app.use(express.urlencoded({ extended: true }));
-// app.use(express.static(path.join(__dirname,'')));
+app.use(express.static(path.join(__dirname,'public')));
 
 app.use('/',require('./routes/todoroutes'));
 
-const mongoConnect = require('./connections/database');
-mongoConnect.connect().then(() => {
+const {mongoConnect} = require('./connections/database');
+mongoConnect.then(() => {
     app.listen(PORT, () => {
         console.log(`http://localhost:` + PORT);
     });
