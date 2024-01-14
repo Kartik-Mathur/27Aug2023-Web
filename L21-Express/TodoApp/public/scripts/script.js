@@ -60,6 +60,7 @@ taskList.addEventListener('click',(ev)=>{
         console.log(taskName);
         axios.get(`/increasepriority?name=${taskName}`)
             .then((data)=>{
+                console.log(data.data)
                 data = data.data;
                 updateList(data);
             })

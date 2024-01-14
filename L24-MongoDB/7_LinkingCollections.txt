@@ -84,14 +84,22 @@ RESULT: db.users.find({name:'Joyeta'})
     }
 })
 
-Yeh sabhi users ke liye chal jaega..
-JUST TO GET DETAILS OF Joyeta
-
+Yeh sabhi users ke liye chal jaega.
 db.users.aggregate({
     $lookup:{
         from: 'products',
         localField: 'orders',
         foreignField: '_id',
-        as: 'Data'
+        as: 'orderdetails'
     }
 })
+
+
+
+{
+        name: 'Joyeta',
+        orders: [
+        ObjectId("6589205ab01111787889256a"),
+        ObjectId("6589205ab01111787889256c")
+        ]
+    }
