@@ -19,19 +19,19 @@
     <ul class="list">
         {{#each todos as |t|}}
         <li class="listItem">
-            <div class="listItemText">{{t}}</div>
+            <div class="listItemText">{{t.task}}</div>
             <div class="btnGroup">
                 <button class="upBtn">
-                    <a class="up" href="/increasePriority?name={{t}}">↑</a>
-                    <div style="display: none;" class="taskValue">{{t}}</div>
+                    <a class="up" href="/increasePriority?name={{t.task}}">↑</a>
+                    <div style="display: none;" class="taskValue">{{t.task}}</div>
                 </button>
                 <button class="downBtn">
-                    <a class="down" href="/decreasePriority?name={{t}}">↓</a>
-                    <div style="display: none;" class="taskValue">{{t}}</div>
+                    <a class="down" href="/decreasePriority?name={{t.task}}">↓</a>
+                    <div style="display: none;" class="taskValue">{{t.task}}</div>
                 </button>
                 <button class="delBtn">
-                    <a class="delete" href="/deletetask?name={{t}}">❌</a>
-                    <div style="display: none;" class="taskValue">{{t}}</div>
+                    <a class="delete" href="/deletetask?name={{t.task}}">❌</a>
+                    <div style="display: none;" class="taskValue">{{t.task}}</div>
                 </button>
             </div>
         </li>

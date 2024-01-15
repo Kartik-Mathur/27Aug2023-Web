@@ -37,7 +37,7 @@ form.addEventListener('submit',async (ev)=>{
             task: inp.value
         })
         console.log(data);
-        addTaskToList(data[data.length-1]);
+        addTaskToList(data[data.length-1].task);
     }
     catch(err){
         errorMessage.innerHTML = `${err.message}<button class="removeError">❌</button>`;
@@ -95,3 +95,4 @@ list.addEventListener('click',async (ev)=>{
         }
     }
 })
+

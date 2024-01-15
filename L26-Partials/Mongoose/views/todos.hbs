@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos</title>
+</head>
+
+<body>
+    <h1>My Todos</h1>
+
+    <form action="/addtasks" method="POST">
+        <input type="text" name="task" id="task" placeholder="Enter Task">
+        <input type="text" name="price" id="price" placeholder="Enter Price">
+        <button type="submit">Add Task</button>
+    </form>
+
+    <ul>
+        {{#each data as |d|}}
+            <li>{{d.task}} : {{d.price}}</li>
+        {{/each}}
+    </ul>
+</body>
+
+</html>
