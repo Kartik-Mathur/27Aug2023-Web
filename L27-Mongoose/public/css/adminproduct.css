@@ -14,3 +14,10 @@
     padding: 3px;
     border-radius: 25px;
 }
+
+.addProductBtn:hover{cursor: pointer;}
+
+.productForm{
+    margin: 40px 0;
+    margin-bottom: 400px;
+}

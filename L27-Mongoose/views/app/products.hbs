@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
@@ -14,24 +15,34 @@
     <link rel="stylesheet" href="/css/home.css">
 
     <link rel="stylesheet" href="/css/adminproduct.css">
+    <link rel="stylesheet" href="/css/product.css">
 </head>
+
 <body>
-    
+
     {{> navbar}}
 
     <div class="container">
-        LIST OF ALL ADMIN PRODUCTS
-        <ul>
+        <div class="adminProductHeading">USER PORTAL</div>
+        <ul class="productList">
             {{#each products as |p|}}
-                <li>
-                    <img src="{{p.imageUrl}}" alt=""> <br>
-                    <span>Name: </span> <span>{{p.name}}</span> <br>
-                    <span>Price: </span> <span>{{p.price}}</span> <br>
-                    <span>Description: </span> <span>{{p.description}}</span> <br>                    
-                </li>
+            <li class="productItem">
+                {{!-- <img class="productImage" src="{{p.imageUrl}}" alt=""> <br> --}}
+                <div class="productImage"
+                    style="background-image: url({{p.imageUrl}}); background-repeat: no-repeat; background-size: cover">
+                </div> <br>
+                <div class="productDetails">
+                    <span class="productName">{{p.name}}</span> <br>
+                    <span class="productPrice">{{p.price}} $</span> <br>
+                    <span class="productDescription">"{{p.description}}"</span> <br>    
+                </div>
+                <button class="productButton"> <a href="/app/add-to-cart?productId={{p._id}}">Add To Cart</a>
+                </button>
+            </li>
             {{/each}}
         </ul>
     </div>
 
 </body>
+
 </html>

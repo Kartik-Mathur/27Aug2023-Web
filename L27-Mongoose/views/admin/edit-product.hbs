@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/home.css">
+
+    <link rel="stylesheet" href="/css/adminproduct.css">
+</head>
+<body>
+    
+    {{> navbar}}
+
+    <div class="container">
+        <img src="{{product.imageUrl}}" alt="">
+        <form class="productForm" action="/admin/edit-product" method="POST">
+            Name: <input class="productInput" value="{{product.name}}" type="text" name="name" placeholder="Enter Product Name"> <br>
+            Price: <input class="productInput" value="{{product.price}}" type="number" name="price" placeholder="Enter Product Price"> <br>
+            ImageUrl: <input class="productInput" value="{{product.imageUrl}}" type="text" name="imageUrl" placeholder="Enter Image Url"> <br>
+            <input class="productInput" value="{{product._id}}" type="hidden" name="productId" placeholder="Enter Image Url"> <br>
+            Description: <textarea class="productInput" type="text" name="description" placeholder="Enter Product Description">{{product.description}}</textarea><br>
+            <button class="addProductBtn" type="submit">Edit Product</button>
+        </form>
+    </div>
+
+</body>
+</html>

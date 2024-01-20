@@ -45,3 +45,35 @@ module.exports.getProducts = async(req, res, next) => {
     }
     
 }
+
+module.exports.getEditProduct = async(req, res, next) => {
+    const {productId} = req.query;
+    try{
+        let product = await Products.findOne({_id: productId});
+        console.log(product);
+        res.render('admin/edit-product',{
+            product
+        });
+    }catch(err){
+        next(err);
+    }
+    
+}
+
+
+module.exports.postEditProduct = async(req, res, next) => {
+    const {name,imageUrl,description,price,productId} = req.body;
+    try{
+        let product = await Products.findOneAndUpdate({_id: productId}, {
+            name,
+            imageUrl,
+            price,
+            description
+        });
+        console.log(product);
+        res.redirect('/admin/products');
+    }catch(err){
+        next(err);
+    }
+    
+}
