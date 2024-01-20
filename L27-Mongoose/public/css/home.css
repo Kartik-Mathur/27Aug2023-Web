@@ -1,0 +1,33 @@
+.container{
+    width: 1200px;
+    /* border: 1px solid black; */
+    margin: auto;
+    height: 500px;
+    margin-top: 65px;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-item{
+    text-decoration: none;
+    font-size: 26px;
+}
+
+.nav-item:link{
+    color: black;
+}
+
+.nav-item:hover{
+    /* text-decoration: underline; */
+    cursor: pointer;
+}

@@ -1,0 +1,16 @@
+.productInput{
+    font-size: 30px;
+    width: 90%;
+    padding: 2px;
+    margin: 10px 0;
+}
+
+.addProductBtn{
+    font-size: 30px;
+    width: 330px;
+    color: white;
+    background-color: black;
+    border: 0px;
+    padding: 3px;
+    border-radius: 25px;
+}
