@@ -3,11 +3,15 @@ const express = require('express');
 const app = express();
 const PORT = 4444;
 const session = require('express-session');
+const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo');
+
 
 app.use(session({
     secret: 'asndasdwabdbadbhjaw dahvvwdhvawv',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: MongoStore.create({ mongoUrl: 'mongodb+srv://kartik:kartik@cluster0.97kax2o.mongodb.net/?retryWrites=true&w=majority' })
   }))
 app.set('view engine','hbs');
 app.use(express.urlencoded({extended:true}));
@@ -41,6 +45,9 @@ app.get('/logout',(req,res)=>{
     });
 })
 
-app.listen(PORT,()=>{
-    console.log(`http://localhost:`+PORT);
-});
+mongoose.connect('mongodb+srv://kartik:kartik@cluster0.97kax2o.mongodb.net/?retryWrites=true&w=majority')
+.then(()=>{
+    app.listen(PORT,()=>{
+        console.log(`http://localhost:`+PORT);
+    });
+})

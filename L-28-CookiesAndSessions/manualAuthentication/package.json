@@ -1,5 +1,5 @@
 {
-  "name": "l-28-cookiesandsessions",
+  "name": "manualauthentication",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,9 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
-    "connect-mongo": "^5.1.0",
-    "cookies": "^0.9.1",
     "dotenv": "^16.3.2",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
