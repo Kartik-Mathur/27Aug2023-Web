@@ -3,11 +3,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const session = require('express-session');
-const PORT = 4444;
+const PORT = 3000;
 const bcrypt = require('bcrypt');
 const bodyparser = require('body-parser');
 const User = require('./model/user');
-
+const MongoStore = require('connect-mongo');
 app.set('view engine', 'hbs');
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
@@ -15,9 +15,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
     secret: 'asdasfasfsarfrasdaed asdasfd',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: MongoStore.create({ mongoUrl: 'mongodb+srv://kartik:kartik@cluster0.97kax2o.mongodb.net/?retryWrites=true&w=majority' })
 }));
-
+require('dotenv').config();
 const passport = require('./utils/passport');
 app.use(passport.initialize());
 app.use(passport.session());
@@ -75,9 +76,21 @@ app.get('/profile', (req, res) => {
     if (!req.user) return res.redirect('/login');
     res.render('profile', {
         username: req.user.username,
-        password: req.user.password
+        password: req.user.password,
+        AT: req.user.FB_AccessToken,
+        FB_ID: req.user.FB_ID
     })
 })
+
+app.get('/auth/facebook',
+    passport.authenticate('facebook'));
+
+app.get('/auth/facebook/callback',
+    passport.authenticate('facebook', { failureRedirect: '/login' }),
+    function (req, res) {
+        // Successful authentication, redirect home.
+        res.redirect('/profile');
+    });
 
 mongoose.connect('mongodb+srv://kartik:kartik@cluster0.97kax2o.mongodb.net/?retryWrites=true&w=majority')
     .then(() => {

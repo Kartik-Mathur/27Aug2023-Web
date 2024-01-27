@@ -7,9 +7,11 @@ const userSchema = new Schema({
         required: true
     },
     password: {
-        type: String,
-        required: true
-    }
+        type: String
+    },
+    FB_AccessToken: String,
+    FB_Name: String,
+    FB_ID: String
 });
 
 module.exports = mongoose.model('Users',userSchema);
