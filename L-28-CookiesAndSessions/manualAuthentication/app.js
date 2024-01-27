@@ -63,6 +63,7 @@ app.post('/signup', async (req, res) => {
 })
 
 app.get('/login',(req,res)=>{
+    if(req.session.username) return res.redirect('/profile');
     res.render('login');
 })
 
