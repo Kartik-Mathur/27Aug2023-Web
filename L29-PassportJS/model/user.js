@@ -10,8 +10,12 @@ const userSchema = new Schema({
         type: String
     },
     FB_AccessToken: String,
+    Google_AccessToken: String,
     FB_Name: String,
-    FB_ID: String
+    Google_Name: String,
+    Google_Photo:String,
+    FB_ID: String,
+    Google_ID: String
 });
 
 module.exports = mongoose.model('Users',userSchema);

@@ -1,5 +1,5 @@
 {
-  "name": "l29-passportjs",
+  "name": "l30-sockets",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,18 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
-    "connect-mongo": "^5.1.0",
-    "dotenv": "^16.4.1",
     "express": "^4.18.2",
-    "express-session": "^1.17.3",
     "hbs": "^4.2.0",
     "mongoose": "^8.1.1",
-    "passport": "^0.7.0",
-    "passport-facebook": "^3.0.0",
-    "passport-google-oauth20": "^2.0.0",
-    "passport-local": "^1.0.0",
-    "passport-oauth2": "^1.7.0"
+    "socket.io": "^4.7.4"
   }
 }

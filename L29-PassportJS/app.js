@@ -78,7 +78,8 @@ app.get('/profile', (req, res) => {
         username: req.user.username,
         password: req.user.password,
         AT: req.user.FB_AccessToken,
-        FB_ID: req.user.FB_ID
+        FB_ID: req.user.FB_ID,
+        Google_Photo: req.user.Google_Photo
     })
 })
 
@@ -87,6 +88,15 @@ app.get('/auth/facebook',
 
 app.get('/auth/facebook/callback',
     passport.authenticate('facebook', { failureRedirect: '/login' }),
+    function (req, res) {
+        res.redirect('/profile');
+    });
+
+app.get('/auth/google',
+    passport.authenticate('google', { scope: ['profile'] }));
+
+app.get('/auth/google/callback',
+    passport.authenticate('google', { failureRedirect: '/login' }),
     function (req, res) {
         // Successful authentication, redirect home.
         res.redirect('/profile');
