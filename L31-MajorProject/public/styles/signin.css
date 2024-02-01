@@ -1,0 +1,23 @@
+.signin-form{
+    border: 1px solid #ccc;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.username,
+.password,
+.signin-btn{
+    width: 100%;
+    height: 60px;
+}
+
+.signin-btn{
+    background-color: blue;
+    color: white;
+}
+
+.signin-google-btn img{
+    width: 100%;
+    height: 60px;
+}

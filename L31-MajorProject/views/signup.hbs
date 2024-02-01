@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/signin.css">
+
+</head>
+<body>
+    {{> navbar}}
+
+    <div class="container">
+        <form class="signin-form" action="/signup" method="post">
+            <input class="username" type="text" placeholder="Enter Username">
+            <input class="password" type="password" placeholder="Enter Password">
+
+            <button class="signin-btn" type="submit">Sign Up</button>
+        </form>
+
+        <div class="signin">
+            <a href="/signin"><span>Existing User? Sign In Instead</span></a>
+        </div>
+    </div>
+</body>
+</html>

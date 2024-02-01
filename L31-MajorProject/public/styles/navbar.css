@@ -12,8 +12,8 @@
 
 .nav-logo{
     width: 200px;
-    height: 80px;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqKJTSO9GsPbaiJaJ5q0UTkIxLNCmwjAykiQ&usqp=CAU');
+    height: 120px;
+    background-image: url('https://www.freepnglogos.com/uploads/amazon-png-logo-vector/amazon-symbol-png-logo-vector-9.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -53,4 +53,14 @@
     font-size: 28px;
     color: white;
     cursor: pointer;
+}
+
+.nav-signin a{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-signin a:link,
+.nav-signin a:visited{
+    color: white;
 }

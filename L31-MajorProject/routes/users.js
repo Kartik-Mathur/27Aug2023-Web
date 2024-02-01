@@ -3,9 +3,10 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/',(req,res,next)=>{
-    res.render('index');
-});
+const userController = require('../controllers/user');
 
+router.get('/', userController.getIndex);
+router.get('/signin', userController.getSignIn);
+router.get('/signup', userController.getSignUp);
 
 module.exports=router;
