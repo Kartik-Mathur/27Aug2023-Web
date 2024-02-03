@@ -5,6 +5,9 @@ const PORT = 4444;
 const hbs = require('hbs');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
+const bodyParser = require('body-parser');
+
+
 require('dotenv').config();
 
 app.use(require('express-session')(
@@ -19,7 +22,7 @@ app.use(require('express-session')(
 hbs.registerPartials(__dirname + '/views/partials');
 
 
-console.log(process.env)
+// console.log(process.env)
 
 const passport = require('passport');
 require('./passport/passport');
@@ -27,7 +30,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.set('view engine', 'hbs');
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/auth/google',

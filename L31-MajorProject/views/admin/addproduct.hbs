@@ -18,10 +18,10 @@
     <div class="container">
         <h1>Welcome to Admin's Product Page</h1>
 
-        <form action="/admin/addproduct" method="POST">
+        <form action="/admin/addproduct" method="POST" enctype="multipart/form-data">
             Name : <input name="name" type="text" placeholder="Enter Name"> <br>
             Price : <input name="price" type="number" placeholder="Enter Price"> <br>
-            Image: <input name="file" type="file" placeholder="Upload Image"> <br>
+            Image: <input name="image" type="file" placeholder="Upload Image"> <br>
             Description: <input name="description" type="text" placeholder="Enter Description"> <br>
 
             <button type="submit">Add Product</button>

@@ -8,9 +8,9 @@ passport.use(new GoogleStrategy({
     callbackURL: "http://localhost:4444/auth/google/callback"
 },
     async function (accessToken, refreshToken, profile, cb) {
-        console.log(accessToken);
-        console.log(refreshToken);
-        console.log(profile);
+        // console.log(accessToken);
+        // console.log(refreshToken);
+        // console.log(profile);
         let user = await Users.findOne({google_id: profile.id});
         try{
             if(user) return cb(null,user);
@@ -32,14 +32,14 @@ passport.use(new GoogleStrategy({
 
 
 passport.serializeUser(function (user, done) {
-    console.log("USERR : ",user._id); 
+    // console.log("USERR : ",user._id); 
     done(null, user._id);
 });
 
 passport.deserializeUser(async function (id, done) {
     try {
         let user = await Users.findOne({ _id: id });
-        console.log("USERR : ",user); 
+        // console.log("USERR : ",user); 
         if (user) return done(null, user)
         done(null, false);
     }
