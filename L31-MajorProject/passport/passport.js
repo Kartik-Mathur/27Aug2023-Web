@@ -11,7 +11,7 @@ passport.use(new GoogleStrategy({
         console.log(accessToken);
         console.log(refreshToken);
         console.log(profile);
-        let user = Users.findOne({google_id: profile.id});
+        let user = await Users.findOne({google_id: profile.id});
         try{
             if(user) return cb(null,user);
 
@@ -32,12 +32,14 @@ passport.use(new GoogleStrategy({
 
 
 passport.serializeUser(function (user, done) {
+    console.log("USERR : ",user._id); 
     done(null, user._id);
 });
 
 passport.deserializeUser(async function (id, done) {
     try {
         let user = await Users.findOne({ _id: id });
+        console.log("USERR : ",user); 
         if (user) return done(null, user)
         done(null, false);
     }

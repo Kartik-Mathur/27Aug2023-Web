@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+</head>
+
+<body>
+    {{> navbar}}
+
+    <div class="container">
+        <div class="user-details">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>{{user.username}}</td>
+                </tr>
+                {{#if user.google_accessToken}}
+                <tr>
+                    <th>Google Access Token</th>
+                    <td>{{user.google_accessToken}}</td>
+                </tr>
+                {{/if}}
+                {{#if user.google_img}}
+                <tr>
+                    <th>Image</th>
+                    <td>
+                        <img src={{user.google_img}} alt="google image">
+                    </td>
+                </tr>
+                {{/if}}
+
+                <tr>
+                    <th>Password</th>
+                    <td>
+                        <input type="disabled" value="******">
+                    </td>
+                </tr>
+                
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

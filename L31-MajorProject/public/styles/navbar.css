@@ -49,13 +49,23 @@
     cursor: pointer;
 }
 
-.nav-cart{
+.nav-cart,
+.nav-logout{
     font-size: 28px;
     color: white;
     cursor: pointer;
 }
 
-.nav-signin a{
+.nav-item,
+.nav-item a{
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-signin a,
+.nav-logout a{
     color: white;
     text-decoration: none;
 }

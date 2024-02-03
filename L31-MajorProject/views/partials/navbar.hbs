@@ -1,11 +1,31 @@
 <nav class="navbar">
-    <a href="/"><div class="nav-item nav-logo"></div></a> 
+    <a href="/">
+        <div class="nav-item nav-logo"></div>
+    </a>
     <div class="nav-item nav-search">
         <input class="nav-input" type="text" placeholder="Search CodingBlocks.in">
         <div class="search-icon">🔍</div>
     </div>
     <div class="nav-item nav-signin">
-        <a href="/signin">Sign In</a> 
+        <a href="/signin">Sign In</a>
     </div>
     <div class="nav-item nav-cart">Cart</div>
+    {{#if isLoggedIn}}
+    <div class="nav-item nav-logout">
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="nav-item">
+        <a href="/profile">Profile</a>
+    </div>
+    {{#if isAdmin}}
+    <div class="nav-item">
+        <a href="/admin/addproduct">Add Product</a>
+    </div>
+    {{/if}}
+    {{else}}
+    <div class="nav-item nav-logout">
+        <a href="/signin">Login</a>
+    </div>
+    {{/if}}
+
 </nav>
