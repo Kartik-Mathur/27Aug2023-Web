@@ -16,7 +16,7 @@ const userSchema = new Schema({
     default: false
   },
   cart: [
-    { type: Schema.ObjectId , qty: Number}
+    { product_id: { type: Schema.ObjectId, ref: 'Products' }, qty: Number }
   ]
 });
 

@@ -13,4 +13,5 @@ router.get('/profile', isLoggedIn, userController.getProfile);
 router.get('/logout', userController.getLogout);
 router.get('/products', isLoggedIn, userController.getProducts);
 router.get('/addtocart', isLoggedIn, userController.getAddToCart);
+router.get('/cartnumber', isLoggedIn, userController.getCartNumber);
 module.exports = router;

@@ -9,3 +9,20 @@
     margin: auto;
     margin-top: 110px;
 }
+
+.nav-cart{
+    position: relative;
+}
+
+.cart-number{
+    position: absolute;
+    top: 0;
+    right: -10px;
+    background-color: yellow;
+    color: black;
+    border-radius: 5px;
+    height: 15px;
+    width: 15px;
+    font-weight: 600;
+    font-size: 14px;
+}
