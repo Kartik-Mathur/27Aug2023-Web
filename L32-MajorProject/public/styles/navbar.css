@@ -1,0 +1,76 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(14, 14, 56);
+    display: flex;
+    height: 100px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-logo{
+    width: 200px;
+    height: 120px;
+    background-image: url('https://www.freepnglogos.com/uploads/amazon-png-logo-vector/amazon-symbol-png-logo-vector-9.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.nav-search{
+    width: 50%;
+    height: 40px;
+    background-color: white;
+    display: flex;
+}
+
+.nav-input{
+    height: 100%;
+    width: 94%;
+    box-sizing: border-box;
+}
+
+.search-icon{
+    height: 100%;
+    width: 6%;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: orange;
+    border: 1px solid rgb(110, 110, 0);
+    font-size: 30px;
+    text-align: center;
+}
+
+.nav-signin{
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.nav-cart,
+.nav-logout{
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-item,
+.nav-item a{
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-signin a,
+.nav-logout a{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-signin a:link,
+.nav-signin a:visited{
+    color: white;
+}
