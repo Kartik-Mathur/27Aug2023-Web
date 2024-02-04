@@ -6,9 +6,6 @@
         <input class="nav-input" type="text" placeholder="Search CodingBlocks.in">
         <div class="search-icon">🔍</div>
     </div>
-    <div class="nav-item nav-signin">
-        <a href="/signin">Sign In</a>
-    </div>
     <div class="nav-item nav-cart">Cart</div>
     {{#if isLoggedIn}}
     <div class="nav-item nav-logout">
@@ -17,14 +14,22 @@
     <div class="nav-item">
         <a href="/profile">Profile</a>
     </div>
+    {{else}}
+    <div class="nav-item nav-logout">
+        <a href="/signin">Login</a>
+    </div>
+    {{/if}}
+
     {{#if isAdmin}}
     <div class="nav-item">
         <a href="/admin/addproduct">Add Product</a>
     </div>
-    {{/if}}
+    <div class="nav-item">
+        <a href="/admin/products">Products List</a>
+    </div>
     {{else}}
-    <div class="nav-item nav-logout">
-        <a href="/signin">Login</a>
+    <div class="nav-item">
+        <a href="/products">Products List</a>
     </div>
     {{/if}}
 

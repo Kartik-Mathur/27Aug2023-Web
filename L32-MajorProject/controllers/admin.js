@@ -21,7 +21,7 @@ module.exports.getProducts = async (req, res, next) => {
     try {
         let products = await Product.find({}).populate({
             path: 'user_id',
-            select: 'username -_id'
+            select: 'username isAdmin -_id'
         });
         console.log(products);
         res.render('admin/products', {
@@ -63,7 +63,9 @@ module.exports.getEditProduct = async (req, res, next) => {
             select: 'username -_id'
         });
         res.render('admin/editproduct', {
-            product
+            product,
+            isLoggedIn: req.user ? true : false,
+            isAdmin: req.user.isAdmin
         })
     }
     catch (err) {
@@ -77,7 +79,7 @@ module.exports.postEditProduct = async (req, res, next) => {
     const myUrl = parser.format('.png', image.buffer);
 
     try {
-        let meraPreviousProduct = await Product.findOne({_id: id});
+        let meraPreviousProduct = await Product.findOne({ _id: id });
         meraPreviousProduct.name = name;
         meraPreviousProduct.price = price;
         meraPreviousProduct.description = description;

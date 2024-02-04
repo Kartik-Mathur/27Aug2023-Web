@@ -10,11 +10,14 @@ const userSchema = new Schema({
   google_accessToken: String,
   google_img: String,
   google_id: String,
-  isAdmin:{
+  isAdmin: {
     type: Boolean,
     required: true,
     default: false
-  }
+  },
+  cart: [
+    { type: Schema.ObjectId , qty: Number}
+  ]
 });
 
-module.exports = mongoose.model('Users',userSchema);
+module.exports = mongoose.model('Users', userSchema);
