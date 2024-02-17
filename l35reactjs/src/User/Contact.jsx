@@ -4,7 +4,7 @@ import Navbar from "../navbar/Navbar";
 const Contact = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div>Contact Page</div>
     </div>
   );

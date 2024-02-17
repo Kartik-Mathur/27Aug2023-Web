@@ -4,7 +4,7 @@ import Navbar from "../navbar/Navbar";
 const Blogs = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt vero
         sed consequatur, minus minima id itaque. Debitis, dolorum tempora
