@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import Styles from './About.module.css';
 const About = () => {
   return (
