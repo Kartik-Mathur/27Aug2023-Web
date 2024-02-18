@@ -1,8 +1,27 @@
-import React from 'react'
-
+import React, { Fragment } from 'react'
+import { Link, Outlet } from 'react-router-dom'
+import Styles from './About.module.css';
 const About = () => {
   return (
-    <div>About</div>
+    <Fragment>
+        <NavLink to="faqs">FAQs</NavLink>
+        <NavLink to="about">About Us</NavLink>
+
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi molestias quibusdam aperiam nostrum, modi provident sed dolore eos incidunt consectetur natus in possimus nulla quisquam consequatur eaque beatae harum! Suscipit?
+        </div>
+
+        <h1>My About Page</h1>
+
+        <div className={Styles.faqs}>
+            <div className={Styles.myFaqs} >
+                {/* <Outlet /> */}
+            </div>
+            <div className={Styles.myFaqsInfo} >
+                Read the following FAQs carefully
+            </div>
+        </div>
+    </Fragment>
   )
 }
 

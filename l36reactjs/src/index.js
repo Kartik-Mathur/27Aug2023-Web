@@ -15,13 +15,16 @@ import {
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
 import Error from './Components/Error';
+import Faqs from './Components/Faqs';
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route path='home' element={<Home />}></Route>
-      <Route path='about' element={<About />}></Route>
+      <Route path='about' element={<About />}>
+        <Route path='faqs' element={<Faqs />}></Route>
+      </Route>
     </Route>
   ));
 // const router = createBrowserRouter([
