@@ -1,16 +1,13 @@
-import { useEffect } from 'react';
 import './App.css';
+import {useLoaderData} from 'react-router-dom';
+import FoodItem from './Components/FoodItem/FoodItem';
 
 function App() {
-  useEffect(async () => {
-    let foodData = await axios.get('http://localhost:4444/');
-    console.log(foodData);
-    return foodData;
+  const foodData = useLoaderData();
 
-  });
   return (
     <div className="App">
-
+      {foodData.map(item=><FoodItem food={item} />)}
     </div>
   );
 }

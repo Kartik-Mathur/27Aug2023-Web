@@ -15,7 +15,7 @@ import bringFood from './utils/bringFood';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" loader={bringFood} element={<App />}>
-
+      <Route path="/cart" element={<Cart />}></Route>
     </Route>
   )
 );
