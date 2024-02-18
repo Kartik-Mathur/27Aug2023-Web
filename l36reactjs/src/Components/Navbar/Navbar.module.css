@@ -1,0 +1,20 @@
+.nav-bar{
+    display: flex;
+    justify-content: end;
+    height: 60px;
+    border: 1px solid black;
+    align-items: center;
+    font-size: 24px;
+    background-color: rgb(203, 0, 0);
+    /* position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%; */
+}
+
+.nav-item{
+    text-decoration: none;
+    color: white;
+    margin: 0px 10px;
+    
+}
