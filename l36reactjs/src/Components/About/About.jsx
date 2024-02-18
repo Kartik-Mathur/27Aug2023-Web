@@ -5,7 +5,7 @@ const About = () => {
   return (
     <Fragment>
         <NavLink to="faqs">FAQs</NavLink>
-        <NavLink to="about">About Us</NavLink>
+        <NavLink to="contact">Contact Us</NavLink>
 
         <div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi molestias quibusdam aperiam nostrum, modi provident sed dolore eos incidunt consectetur natus in possimus nulla quisquam consequatur eaque beatae harum! Suscipit?
@@ -15,7 +15,7 @@ const About = () => {
 
         <div className={Styles.faqs}>
             <div className={Styles.myFaqs} >
-                {/* <Outlet /> */}
+                <Outlet />
             </div>
             <div className={Styles.myFaqsInfo} >
                 Read the following FAQs carefully

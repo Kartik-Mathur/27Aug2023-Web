@@ -18,10 +18,10 @@ const Navbar = () => {
         </NavLink>
 
       </div>
-      <Routes>
+      {/* <Routes>
         <Route path="home" element={<Home />} />
         <Route path="about" element={<About />} />
-      </Routes>
+      </Routes> */}
     </Fragment>
   );
 };

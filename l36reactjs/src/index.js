@@ -16,6 +16,7 @@ import Home from './Components/Home/Home';
 import About from './Components/About/About';
 import Error from './Components/Error';
 import Faqs from './Components/Faqs';
+import Contact from './Components/Contact';
 
 
 const router = createBrowserRouter(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
       <Route path='home' element={<Home />}></Route>
       <Route path='about' element={<About />}>
         <Route path='faqs' element={<Faqs />}></Route>
+        <Route path='contact' element={<Contact />}></Route>
       </Route>
     </Route>
   ));
