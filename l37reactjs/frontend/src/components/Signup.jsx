@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from 'react-router-dom';
 
 const SERVER_URL = "http://localhost:4444";
 
-const Login = ({updateLogin}) => {
-  
+const Signup = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
   const formHandler = async (ev) => {
     ev.preventDefault();
@@ -16,13 +15,14 @@ const Login = ({updateLogin}) => {
     console.log(username);
     console.log(password);
     try {
-      let { data } = await axios.post(SERVER_URL + "/login", {
+      let { data } = await axios.post(SERVER_URL + "/signup", {
         username,
         password,
       });
-      if(data.loggedIn){
-        updateLogin(true);
-        navigate('/profile');
+      if (data.signedUp) {
+        navigate('/login');
+      } else {
+        navigate('/signup');
       }
     } catch (err) {
       console.log(err);
@@ -57,10 +57,10 @@ const Login = ({updateLogin}) => {
         />
 
         <br />
-        <button>Login</button>
+        <button>Sign Up</button>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Signup;

@@ -4,6 +4,7 @@ const Users = require('../model/user');
 
 passport.use(new LocalStrategy(
     async function (username, password, done) {
+        console.log(username, password)
         try {
             let user = await Users.findOne({ username });
             if (user) {
@@ -26,7 +27,7 @@ passport.serializeUser(function (user, done) {
 
 passport.deserializeUser(async function (id, done) {
     try {
-        let user = await User.findOne({ _id: id });
+        let user = await Users.findOne({ _id: id });
         done(null, user);
     } catch (err) {
         done(err);

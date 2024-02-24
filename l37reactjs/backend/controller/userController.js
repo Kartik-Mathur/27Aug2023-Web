@@ -2,6 +2,7 @@ const Users = require("../model/user");
 
 module.exports.postSignUp = async (req, res, next) => {
     const { username, password } = req.body;
+    console.log(username, password);
     try {
         let user = await Users.findOne({ username });
         if (user) {
@@ -10,13 +11,30 @@ module.exports.postSignUp = async (req, res, next) => {
             })
         }
         else {
-            let user = await User.create({
+            let user = await Users.create({
                 username,
                 password
             })
-            return res.status(200).send({signedUp: true,username});
+            return res.status(200).json({ 
+                msg: "Signup Success",
+                signedUp: true, 
+                username 
+            });
         }
-    }catch(err){
-        res.status(500).json(err);
+    } catch (err) {
+        res.status(500).json(
+            {
+                msg:"Signup Kaand At Server",
+                err
+            }
+        );
     }
+}
+
+module.exports.getProfile = (req, res, next) => {
+    res.status(200).json({
+        msg: "Success",
+        username: req.user.username,
+        loggedIn: true
+    })
 }

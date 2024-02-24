@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const cors = require('cors');
 const passport = require('passport');
+const mongoose = require('mongoose');
 
 app.use(cors({
     origin: ['http://localhost:3000'],
@@ -30,7 +31,7 @@ app.post('/login', passport.authenticate('local',
         failureRedirect: '/login',
         successRedirect: '/profile'
     }))
-    
+
 app.use('/', require('./routes/user'));
 
 mongoose.connect('mongodb+srv://kartik:kartik@cluster0.97kax2o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
