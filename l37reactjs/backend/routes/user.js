@@ -14,10 +14,13 @@ router.get('/', (req, res, next) => {
         username: req.user.username,
         loggedIn: true
     })
-    else res.status(401).json({
-        msg: "You need to login first",
-        loggedIn: false
-    })
+    else {
+        console.log("Here");
+        return res.status(401).json({
+            msg: "You need to login first",
+            loggedIn: false
+        })
+    }
 })
 
 
