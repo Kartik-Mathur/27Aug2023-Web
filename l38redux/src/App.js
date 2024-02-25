@@ -1,23 +1,18 @@
 import './App.css';
 import { increaseCounter, decreaseCounter } from './action/action';
-import { useSelector } from 'react-redux';
-import store from './store';
-
-console.log(store.getState());
-
-const subscribe = store.subscribe(() => console.log(store.getState()))
-
-store.dispatch(increaseCounter);
-store.dispatch(decreaseCounter);
+import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
-  const counter = useSelector();
-  console.log(counter);
+  const counterState = useSelector(state => state.counterReducer);
+  // console.log(counterState);
+  const dispatch = useDispatch();
+  let obj = JSON.parse(localStorage.getItem("obj"));
+  console.log(obj)
   return (
     <>
-      <button>+</button>
-      <button>-</button>
-      <div>0</div>
+      <button onClick={()=>dispatch(increaseCounter)}>+</button>
+      <button onClick={()=>dispatch(decreaseCounter)}>-</button>
+      <div>{counterState.value}</div>
     </>
   );
 }
